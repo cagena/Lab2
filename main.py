@@ -43,11 +43,14 @@ if __name__ == '__main__':
     time = []
     enc_pos = []
     while True:
-        x = input('Input Kp to run step response, input s to stop')
+        x = input('Input Kp to run step response, input s to stop: ')
         try:
             float(x)
         except:
-            while difference <= 1000:
+            if x == 's':
+                break
+        else:
+            while difference <= 10000:
                 current = utime.ticks_ms()
                 difference = current - start
         #        print('Encoder 2 position: ' + str(encoder_drv2.read()))
@@ -60,6 +63,3 @@ if __name__ == '__main__':
             for x in time:
                 print(time[i], enc_pos[i])
                 i += 1
-        else:
-            if x == 's':
-                break
