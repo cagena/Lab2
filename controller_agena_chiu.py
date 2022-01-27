@@ -21,10 +21,10 @@ class ControllerDriver:
         @param i_set The initial setpoint for the controller.
         '''
         ## Proportional Gain
-        self.K_p = int(K_p)
+        self.K_p = K_p
         
         ## Initial setpoint
-        self.i_set = int(i_set)
+        self.i_set = i_set
         
         print ('Creating a controller driver')
         
@@ -35,9 +35,16 @@ class ControllerDriver:
         @return duty Duty cycle to set the motor.
         '''
         ## Error, difference between the current position and initial setpoint.
-        error = pos - self.i_set
+        if pos < self.i_set:
+            error = abs(pos - self.i_set)
+        elif pos > self.i_set:
+            error = abs(pos - self.i_set)*(-1)
         ## Actuation signal or percent duty cycle to set the motor.
         duty = error*self.K_p
+        if duty > 100:
+            duty = 100
+        elif duty < -100:
+            duty = -100
         return duty
         
     def set_setpoint(self,setpoint):
