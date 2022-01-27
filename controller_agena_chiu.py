@@ -21,10 +21,10 @@ class ControllerDriver:
         @param i_set The initial setpoint for the controller.
         '''
         ## Proportional Gain
-        self.K_p = K_p
+        self.K_p = int(K_p)
         
         ## Initial setpoint
-        self.i_set = i_set
+        self.i_set = int(i_set)
         
         print ('Creating a controller driver')
         
