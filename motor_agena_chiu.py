@@ -78,4 +78,4 @@ class MotorDriver:
             self.ch1.pulse_width_percent(0)
             self.ch2.pulse_width_percent(0) 
             
-        print ('Setting duty cycle to ' + str (duty))   
+#        print ('Setting duty cycle to ' + str (duty))   

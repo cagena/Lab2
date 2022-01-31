@@ -21,10 +21,10 @@ class ControllerDriver:
         @param i_set The initial setpoint for the controller.
         '''
         ## Proportional Gain
-        self.K_p = K_p
+        self.K_p = float(K_p)
         
         ## Initial setpoint
-        self.i_set = i_set
+        self.i_set = float(i_set)
         
         print ('Creating a controller driver')
         
@@ -52,11 +52,11 @@ class ControllerDriver:
         Sets the setpoint.
         @param setpoint The new setpoint used for the controller.
         '''
-        self.i_set = setpoint
+        self.i_set = float(setpoint)
         
     def set_gain(self, gain):
         '''!
         Sets the proportional gain.
         @param gain The new proportional gain used for the controller.
         '''
-        self.K_p = gain
+        self.K_p = float(gain)

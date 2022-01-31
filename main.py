@@ -1,6 +1,6 @@
 '''!
 @file main.py
-This is the main file for Lab 1, where two motor driver and encoder driver objects are created to run functions,
+This is the main file for Lab 2, where two motor driver and encoder driver objects are created to run functions,
 such as setting duty cycles for the motors and printing encoder position.
 @author Corey Agena
 @author Luisa Chiu
@@ -32,14 +32,12 @@ if __name__ == '__main__':
 
     #Encoder: 256 ticks/ 1 rev
     #pos = input('Choose a setpoint')
-    pos = 256*16*4
-    controller.set_setpoint(pos) #change this to user input later
+    #pos = 256*16*4
+    #controller.set_setpoint(pos) #change this to user input later
     # While loop to continuously print the position of both encoders.    
     #gain = input('Choose a gain')
-    gain = 0.3
-    controller.set_gain(gain) #change this to user input later
-    start = utime.ticks_ms()
-    difference = 0
+    #gain = 0.3
+    #controller.set_gain(gain) #change this to user input later
     time = []
     enc_pos = []
     while True:
@@ -48,9 +46,16 @@ if __name__ == '__main__':
             float(x)
         except:
             if x == 's':
+                motor_drv1.set_duty_cycle(0)
                 break
         else:
-            while difference <= 10000:
+            y = input('Input set point: ')
+            controller.set_gain(x)
+            controller.set_setpoint(y)
+            encoder_drv1.zero()
+            difference = 0
+            start = utime.ticks_ms()
+            while difference <= 5000:
                 current = utime.ticks_ms()
                 difference = current - start
         #        print('Encoder 2 position: ' + str(encoder_drv2.read()))
@@ -60,6 +65,7 @@ if __name__ == '__main__':
                 time.append(difference)
                 enc_pos.append(encoder_drv1.read())
             i = 0
+            motor_drv1.set_duty_cycle(0)
             for x in time:
-                print(time[i], enc_pos[i])
+                print('{:},{:}'.format(time[i],enc_pos[i]))
                 i += 1

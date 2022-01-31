@@ -7,7 +7,10 @@ x_val = []
 y_val = []
 
 # Open the serial port to read from it and plot.
-with serial.Serial('COMx', 115200) as f:
+with serial.Serial('COM21', 115200) as f:
+    f.write(b'\x04')
+    f.write(b'0.1\r\n')
+    f.write(b'16384\r\n')
     while True:
         raw_data = f.readline()
 #       Next line obtained from: https://stackoverflow.com/questions/53919299/python-how-to-properly-use-readline-and-readlines
