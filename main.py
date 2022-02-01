@@ -55,7 +55,7 @@ if __name__ == '__main__':
             encoder_drv1.zero()
             difference = 0
             start = utime.ticks_ms()
-            while difference <= 5000:
+            while difference <= 1000:
                 current = utime.ticks_ms()
                 difference = current - start
         #        print('Encoder 2 position: ' + str(encoder_drv2.read()))
@@ -69,3 +69,4 @@ if __name__ == '__main__':
             for x in time:
                 print('{:},{:}'.format(time[i],enc_pos[i]))
                 i += 1
+            break
