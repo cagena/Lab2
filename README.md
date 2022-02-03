@@ -1,4 +1,4 @@
-#Lab 2
+# Lab 2
 
 Our closed loop controller moves the motor to a desired position that is defined through user input.
 The proportional controller uses proportional gain values and error signals (the difference between
