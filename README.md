@@ -1,4 +1,4 @@
-Lab 2 Document
+#Lab 2
 
 Our closed loop controller moves the motor to a desired position that is defined through user input.
 The proportional controller uses proportional gain values and error signals (the difference between
@@ -9,6 +9,7 @@ system prompts the user to input a proportional gain value, K_p, following with 
 a setpoint value.
 
 The plots below depict our step response system using the following K_p values: 0.05, 0.1, and 0.15.
+
 
 The figure below shows our step response using a K_p of 0.05.
 
