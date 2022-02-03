@@ -26,8 +26,6 @@ class ControllerDriver:
         ## Initial setpoint
         self.i_set = float(i_set)
         
-        print ('Creating a controller driver')
-        
     def run(self,pos):
         '''!
         Called repeatedly to run the control algorithm.
