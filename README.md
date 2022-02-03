@@ -42,6 +42,6 @@ response to reach the endpoint was about the same as the time duration for a K_p
 there is more oscillation in this system.
 
 
-To conclude, we learned that increasing gain values increases oscillation and the time duration for the system to reach the endpoint. Although the 
-step response reaches the endpoint quicker with higher gain values, too high of a gain value can cause a lot of oscillation, which makes the system 
-take a longer overall time to reach the endpoint. Therefore, the proportional gain value that worked best for our system was a K_p value of 0.1.
+To conclude, we learned that increasing gain values increases oscillation and the time duration for the system to reach the endpoint. Although step 
+responses with higher gain values can reach the endpoint quicker, too high of a gain value can cause a lot of oscillation, which will cause the system 
+to take a longer time to reach the endpoint. The proportional gain value that worked best for our system was a K_p value of 0.1.
