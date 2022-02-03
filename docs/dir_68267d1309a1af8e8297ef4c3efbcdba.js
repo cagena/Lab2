@@ -11,5 +11,5 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "motor_agena_chiu.py", "motor__agena__chiu_8py.html", [
       [ "motor_agena_chiu.MotorDriver", "classmotor__agena__chiu_1_1_motor_driver.html", "classmotor__agena__chiu_1_1_motor_driver" ]
     ] ],
-    [ "plot_agena_chiu.py", "plot__agena__chiu_8py.html", null ]
+    [ "plot_agena_chiu.py", "plot__agena__chiu_8py.html", "plot__agena__chiu_8py" ]
 ];

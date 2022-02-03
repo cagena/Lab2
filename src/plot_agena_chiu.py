@@ -16,7 +16,9 @@ import time
 pyplot.figure(1)
 
 # Create empty lists.
+## A variable that creates an empty list to be populated with time data.
 x_val = []
+## A variable that creates an empty list to be populated with encoder position data.
 y_val = []
 
 # Open the serial port to read from it and plot.
@@ -29,6 +31,7 @@ with serial.Serial('COM21', 115200) as f:
     time.sleep(0.25)
 #    Use commented line below to run the response without changing K_p.
 #    f.write(b'0.1\r\n')
+    ## A variable that requests for proportional gain from the user.
     K_p = input('Input Kp to run step response, input s to stop: ')
     f.write(bytes('{:}\r\n'.format(K_p), 'utf8'))
     time.sleep(0.5)
@@ -39,7 +42,9 @@ with serial.Serial('COM21', 115200) as f:
     f.write(b'16384\r\n')
     time.sleep(0.25)
     while True:
+        ## A variable that reads lines of code from the Nucleo.
         raw_data = f.readline()
+        ## A variable that separates strings into ordered lists of data.
         data = raw_data.split(b',')
         try:
             float(data[0])
