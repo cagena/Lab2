@@ -5,8 +5,10 @@ The proportional controller uses proportional gain values and error signals (the
 desired setpoint position and actual position sensed by the encoder) to essentially "correct" the motor duty cycle,
 also known as pulse-width-modulation. The product of the control gain and error signal produces the actuation 
 signal that is sent to the motor, which changes the magnitude and direction of torque. Our step response test 
-system prompts the user to input a proportional gain value, K_p, following with another prompt for the user to input 
-a setpoint value.
+system prompts the user to input a proportional gain value, K_p, then if inputs a value for the setpoint that
+represents one rotation, 16384. Commented code is in the plot file to add a prompt for the user to input 
+a setpoint value. One consideration when using the step response test is that on reset the plot may appear empty,
+run the test again and the test will work properly.
 
 The plots below depict our step response system using the following K_p values: 0.05, 0.1, and 0.15.
 
@@ -42,6 +44,7 @@ response to reach the endpoint was about the same as the time duration for a K_p
 there is more oscillation in this system.
 
 
-To conclude, we learned that increasing gain values increases oscillation and the time duration for the system to reach the endpoint. Although step 
-responses with higher gain values can reach the endpoint quicker, too high of a gain value can cause a lot of oscillation, which will cause the system 
-to take a longer time to reach the endpoint. The proportional gain value that worked best for our system was a K_p value of 0.1.
+To conclude, we learned that increasing gain values increases oscillation and the time duration for the system to reach the
+endpoint. Although step responses with higher gain values can reach the endpoint quicker, too high of a gain value can cause
+a lot of oscillation, which will cause the system to take a longer time to reach the endpoint. The proportional gain value
+that worked best for our system was a K_p value of 0.1.
