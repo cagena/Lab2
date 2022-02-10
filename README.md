@@ -5,7 +5,7 @@ The proportional controller uses proportional gain values and error signals (the
 desired setpoint position and actual position sensed by the encoder) to essentially "correct" the motor duty cycle,
 also known as pulse-width-modulation. The product of the control gain and error signal produces the actuation 
 signal that is sent to the motor, which changes the magnitude and direction of torque. Our step response test 
-system prompts the user to input a proportional gain value, K_p, then if inputs a value for the setpoint that
+system prompts the user to input a proportional gain value, K_p, then it inputs a value for the setpoint that
 represents one rotation, 16384. Commented code is in the plot file to add a prompt for the user to input 
 a setpoint value. One consideration when using the step response test is that on reset the plot may appear empty,
 run the test again and the test will work properly.
